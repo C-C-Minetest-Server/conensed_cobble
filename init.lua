@@ -18,6 +18,14 @@ minetest.register_node("condensed_cobble:condensed_cobble", {
 
 minetest.register_alias("moreblocks:condensed_cobble", "condensed_cobble:condensed_cobble")
 
+stairsplus:register_all("condensed_cobble", "condensed_cobble", "condensed_cobble:condensed_cobble", {
+    description = S("Condensed Cobblestone"),
+    groups = { cracky = 1, stone = 2 },
+    tiles = { "moreblocks_cobble_compressed.png^[colorize:black:255]" },
+    sunlight_propagates = true,
+    sounds = default.node_sound_stone_defaults(),
+})
+
 local COMPRESSED = "moreblocks:cobble_compressed"
 
 minetest.register_craft({
@@ -45,7 +53,7 @@ minetest.register_craft({
 
 minetest.register_craft({
     type = "cooking",
-    cooktime = 45,  -- 5*9
+    cooktime = 45, -- 5*9
     output = "default:stone 81",
     recipe = "moreblocks:cobble_condensed"
 })
@@ -53,7 +61,7 @@ minetest.register_craft({
 if minetest.get_modpath("technic") then
     minetest.register_craft({
         type = "grinding",
-        time = 27,  -- 3*9
+        time = 27, -- 3*9
         output = "default:cobble 81",
         recipe = "moreblocks:cobble_condensed"
     })
