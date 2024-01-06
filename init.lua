@@ -9,6 +9,10 @@ local S = minetest.get_translator("condensed_cobble")
 
 minetest.register_node("condensed_cobble:condensed_cobble", {
     description = S("Condensed Cobblestone"),
+    _doc_items_longdesc = S("A highly-compressed version of cobblestone containing 81 normal cobblestones."),
+    _doc_items_usagehelp =
+        S("9 compressed cobblestones can be placed into the crafting grid to form one condensed. " ..
+            "One condensed can be crafted back to 9 compressed by placing it into the crafting grid."),
     tiles = { "moreblocks_cobble_compressed.png^[colorize:black:255]" },
     is_ground_content = false,
     groups = { cracky = 1, stone = 2 },
