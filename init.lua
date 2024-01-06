@@ -59,10 +59,8 @@ minetest.register_craft({
 })
 
 if minetest.get_modpath("technic") then
-    minetest.register_craft({
-        type = "grinding",
-        time = 27, -- 3*9
-        output = "default:cobble 81",
-        recipe = "moreblocks:cobble_condensed"
+    technic.register_grinder_recipe({
+        input = { "moreblocks:cobble_condensed" },
+        output = "default:cobble 81"
     })
 end
