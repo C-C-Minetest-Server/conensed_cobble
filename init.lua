@@ -27,17 +27,18 @@ stairsplus:register_all("condensed_cobble", "condensed_cobble", "condensed_cobbl
 })
 
 local COMPRESSED = "moreblocks:cobble_compressed"
+local CONDENSED  = "condensed_cobble:condensed_cobble"
 
 minetest.register_craft({
     output = "moreblocks:stone_tile 324",
     recipe = {
-        { COMPRESSED, COMPRESSED },
-        { COMPRESSED, COMPRESSED },
+        { CONDENSED, CONDENSED },
+        { CONDENSED, CONDENSED },
     }
 })
 
 minetest.register_craft({
-    output = COMPRESSED,
+    output = CONDENSED,
     recipe = {
         { COMPRESSED, COMPRESSED, COMPRESSED },
         { COMPRESSED, COMPRESSED, COMPRESSED },
@@ -47,20 +48,20 @@ minetest.register_craft({
 
 minetest.register_craft({
     type = "shapeless",
-    output = "moreblocks:cobble_compressed 9",
-    recipe = { COMPRESSED }
+    output = COMPRESSED .. " 9",
+    recipe = { CONDENSED }
 })
 
 minetest.register_craft({
     type = "cooking",
     cooktime = 45, -- 5*9
     output = "default:stone 81",
-    recipe = "moreblocks:cobble_condensed"
+    recipe = "condensed_cobble:condensed_cobble"
 })
 
 if minetest.get_modpath("technic") then
     technic.register_grinder_recipe({
-        input = { "moreblocks:cobble_condensed" },
+        input = { "condensed_cobble:condensed_cobble" },
         output = "default:cobble 81"
     })
 end
