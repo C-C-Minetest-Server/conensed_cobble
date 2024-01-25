@@ -58,7 +58,7 @@ minetest.register_craft({
 
 minetest.register_craft({
     type = "cooking",
-    cooktime = 45, -- 5*9
+    cooktime = 3 * 8,
     output = "default:stone 81",
     recipe = "condensed_cobble:condensed_cobble"
 })
