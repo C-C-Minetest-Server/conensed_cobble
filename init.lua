@@ -63,9 +63,10 @@ minetest.register_craft({
     recipe = "condensed_cobble:condensed_cobble"
 })
 
-if minetest.get_modpath("technic") then
+if minetest.get_modpath("technic") and technic.register_grinder_recipe then
     technic.register_grinder_recipe({
         input = { "condensed_cobble:condensed_cobble" },
-        output = "default:cobble 81"
+        time = 3 * 8,
+        output = "default:gravel 81"
     })
 end
