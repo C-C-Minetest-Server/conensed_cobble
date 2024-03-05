@@ -70,3 +70,21 @@ if minetest.get_modpath("technic") and technic.register_grinder_recipe then
         output = "default:gravel 81"
     })
 end
+
+if minetest.get_modpath("advtrains") and advtrains.register_platform then
+    advtrains.register_platform("condensed_cobble", "condensed_cobble:condensed_cobble")
+
+    -- Ensure compactibility with LIFO's version of moreblocks
+    minetest.register_alias(
+        "advtrains_platform:platform_low_cobble_condensed",
+        "condensed_cobble:platform_low_condensed_cobble")
+    minetest.register_alias(
+        "advtrains_platform:platform_high_cobble_condensed",
+        "condensed_cobble:platform_high_condensed_cobble")
+    minetest.register_alias(
+        "advtrains_platform:platform_45_cobble_condensed",
+        "condensed_cobble:platform_45_condensed_cobble")
+    minetest.register_alias(
+        "advtrains_platform:platform_45_low_cobble_condensed",
+        "condensed_cobble:platform_45_low_condensed_cobble")
+end
